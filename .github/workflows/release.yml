@@ -12,8 +12,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Install cross build tool
-        run: cargo install typst
+      - name: Install typst
+        run: cargo install typst-cli@v0.14.0
 
       - name: Compile
         run: typst comile example.typ
