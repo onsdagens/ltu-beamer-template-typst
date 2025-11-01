@@ -9,7 +9,7 @@
 )
 
 #title-slide(
-  subtitle: [D7030E - Robust and Energy Efficient Real-Time Systems],
+  subtitle: [D7020E - Robust and Energy Efficient Real-Time Systems],
   title: [1 - Intro],
   authors: [Pawel Dzialo, Prof. Per Lindgren],
 )
