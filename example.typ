@@ -3,9 +3,11 @@
 
 #show: ltutheme.with(
   config-info(
-    subtitle: "D7020E - Robust and Energy Efficient Real-Time Systems",
-    title: "1 - Intro",
+    //subtitle: "D7020E - Robust and Energy Efficient Real-Time Systems",
+    title: "Robust and Energy Efficient
+Real-Time Systems",
     authors: "Pawel Dzialo, Prof. Per Lindgren",
+    date: "hi"
   )
 )
 

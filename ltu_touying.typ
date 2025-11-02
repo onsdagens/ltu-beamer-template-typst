@@ -171,19 +171,21 @@
           //inset: 0.7em,
           breakable: false,
           {
-            set text(fill: self.colors.ltublue, font: ("Helvetica Neue", "Arial", "Liberation Sans")) 
-            text(size: 2em, info.title)
+            v(1em)
+            set text(size: 1.1em, fill: self.colors.ltublue, font: ("Helvetica Neue", "Arial", "Liberation Sans")) 
+              move(dx:-2.1em, align(start,text(info.title)))
             if info.subtitle != none {
-            v(.1em)
-              text(size: 1.2em, info.subtitle)
+              v(0.1em)
+              text(info.subtitle)
             }
+            move(dx: -7.2em, dy: -0.5em, rect(fill: self.colors.ltuorange, width: 2em, height: 4pt))
             // content here
             set text(size: .8em)
             grid(
               columns: (1fr,) * calc.min(info.authors.len(), 3),
               column-gutter: 1em,
               row-gutter: 1em,
-              ..info.authors.map(author => text( author,  ))
+              ..info.authors.map(author => move(dx: -3.1em, align(left, text( author,  ))))
             )
             v(1em)
             if info.institution != none {
