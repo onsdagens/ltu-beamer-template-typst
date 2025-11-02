@@ -7,7 +7,6 @@
     title: "Robust and Energy Efficient
 Real-Time Systems",
     authors: "Pawel Dzialo, Prof. Per Lindgren",
-    date: "hi"
   )
 )
 

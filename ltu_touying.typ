@@ -201,6 +201,15 @@
       },
     )
   }
+  let my_args = (:);
+  my_args.background = {
+    align(right, image("template_assets/first_slide_bg.jpg", fit: "stretch", width: 50%, height: 100%))
+  }
+  self = utils.merge-dicts(
+    self,
+    config-common(freeze-slide-counter: true),
+    config-page(margin: 2.95em, ..my_args),
+  )
   touying-slide(self: self, body)
 })
 
