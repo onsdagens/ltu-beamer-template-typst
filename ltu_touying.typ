@@ -137,9 +137,8 @@
 ///
 /// - extra (string, none): is the extra information for the slide. This can be passed to the `title-slide` function to display additional information on the title slide.
 #let title-slide(
-  config: (:),
+  config: (:), // this is the syntax for an empty dictionary
   extra: none,
-  background-color: rgb("#123456"),
   ..args,
 ) = touying-slide-wrapper(self => {
   self = utils.merge-dicts(
@@ -161,43 +160,44 @@
     }
   }
   let body = {
-    if info.logo != none {
-      place(right, text(fill: self.colors.primary, info.logo))
-    }
     std.align(
-      center + horizon,
+      center,
       {
+        v(13.5%) // no real rationale behind this
         block(
-          inset: 0em,
+          // we assume presentation 16:9 which is
+          // 297.0 by 167.0625 milimeters https://github.com/typst/typst/blob/17a7890b2dc47da390d194d3593ed9a8b5668169/crates/typst-library/src/layout/page.rs#L937
+          fill: white,
+          width: 297mm * 60%,
+          height: 167.0625mm * 40%,
+          //inset: 0.7em,
           breakable: false,
           {
-            text(size: 2em, fill: self.colors.primary, font: ("Helvetica Neue", "Arial", "Liberation Sans"), strong(info.title))
+            set text(fill: self.colors.ltublue, font: ("Helvetica Neue", "Arial", "Liberation Sans")) 
+            text(size: 2em, info.title)
             if info.subtitle != none {
+            v(.1em)
+              text(size: 1.2em, info.subtitle)
+            }
+            // content here
+            set text(size: .8em)
+            grid(
+              columns: (1fr,) * calc.min(info.authors.len(), 3),
+              column-gutter: 1em,
+              row-gutter: 1em,
+              ..info.authors.map(author => text( author,  ))
+            )
+            v(1em)
+            if info.institution != none {
               parbreak()
-              text(size: 1.2em, fill: self.colors.primary, font: ("Helvetica Neue", "Arial", "Liberation Sans"), info.subtitle)
+              text(size: .9em, info.institution)
+            }
+            if info.date != none {
+              parbreak()
+              text(size: .8em, utils.display-info-date(self))
             }
           },
         )
-        set text(size: .8em)
-        grid(
-          columns: (1fr,) * calc.min(info.authors.len(), 3),
-          column-gutter: 1em,
-          row-gutter: 1em,
-          ..info.authors.map(author => text(
-            font: ("Helvetica Neue", "Arial", "Liberation Sans"),
-            fill: white,
-            author,
-          ))
-        )
-        v(1em)
-        if info.institution != none {
-          parbreak()
-          text(size: .9em, info.institution)
-        }
-        if info.date != none {
-          parbreak()
-          text(size: .8em, utils.display-info-date(self))
-        }
       },
     )
   }
@@ -382,10 +382,11 @@
   show: touying-slides.with(
     config-page(
       paper: "presentation-" + aspect-ratio,
-      header-ascent: 0em,
+      header-ascent: 1em,
       footer-descent: 0em,
       margin: (top: 2.5em, bottom: 1.25em, x: 2em),
-      fill: rgb("#132541"), // 19 37 65
+      //fill: rgb("#132541"), // 19 37 65
+      fill: rgb("#032040"),
     ),
     config-common(
       slide-fn: slide,
@@ -402,7 +403,8 @@
       alert: utils.alert-with-primary-color,
     ),
     config-colors(
-      primary: rgb("#04364A"),
+      ltublue: rgb("#032040"),
+      primary: white,
       secondary: rgb("#176B87"),
       tertiary: rgb("#448C95"),
       neutral-lightest: rgb("#ffffff"),
@@ -419,6 +421,8 @@
       footer-b: footer-b,
     ),
     ..args,
+  )
+  title-slide(
   )
 
   body
