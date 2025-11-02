@@ -68,7 +68,7 @@
     )
   }
   let footer(self) = {
-    set std.align(center + bottom)
+    set std.align( bottom)
     set text(
       size: .4em,
       font: ("Helvetica Neue", "Arial", "Liberation Sans"),
@@ -160,6 +160,7 @@
     }
   }
   let body = {
+    //layout(background => (image("img/title.jpg", height: 10%, width: 10%)))
     std.align(
       center,
       {
@@ -367,14 +368,10 @@
   header-right: self => (
     box(utils.display-current-heading(level: 1)) + h(.3em) + self.info.logo
   ),
-  footer-columns: (85%, 15%),
+  footer-columns: (90%, 10%),
   footer-a: self => "LULEÅ UNIVERSITY OF TECHNOLOGY",
   footer-b: self => {
-    h(1fr)
-    utils.display-info-date(self)
-    h(1fr)
-    context utils.slide-counter.display() + " / " + utils.last-slide-number
-    h(1fr)
+    context utils.slide-counter.display()
   },
   ..args,
   body,

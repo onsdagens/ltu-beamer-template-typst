@@ -2,7 +2,6 @@
 #import "ltu_touying.typ": *
 
 #show: ltutheme.with(
-  //aspect-ratio: "16-9",
   config-info(
     subtitle: "D7020E - Robust and Energy Efficient Real-Time Systems",
     title: "1 - Intro",
