@@ -206,6 +206,24 @@
   touying-slide(self: self, body)
 })
 
+/// Final slide
+#let final-slide(
+  config: (:), // this is the syntax for an empty dictionary
+  extra: none,
+  ..args,
+) = touying-slide-wrapper(self => {
+  self = utils.merge-dicts(
+    self,
+    config,
+    config-common(freeze-slide-counter: true),
+  )
+  let body = {
+    v(3em)
+    align(center,layout(background => (image("template_assets/LTU_eng_vit.png", height: 36%, width: 37.25%))))
+  }
+  touying-slide(self: self, body)
+})
+
 
 /// New section slide for the presentation. You can update it by updating the `new-section-slide-fn` argument for `config-common` function.
 ///
@@ -421,8 +439,7 @@
     ),
     ..args,
   )
-  title-slide(
-  )
-
+  title-slide()
   body
+  final-slide()
 }
