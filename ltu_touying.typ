@@ -30,6 +30,7 @@
 #let slide(
   config: (:),
   repeat: auto,
+  headline_text: "",
   setting: body => body,
   composer: auto,
   align: auto,
@@ -371,7 +372,7 @@
   footer-columns: (90%, 10%),
   footer-a: self => "     LULEÅ UNIVERSITY OF TECHNOLOGY", // yep spacing with spaces, i am desperate
   footer-b: self => {
-    align(right, text(fill: self.colors.ltulightblue, context utils.slide-counter.display()))
+    align(right, text(fill: self.colors.ltulightblue, context utils.slide-counter.display() + "     ")) // yep spacing with spaces again
   },
   ..args,
   body,
