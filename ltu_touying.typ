@@ -165,33 +165,32 @@
           fill: white,
           width: 60%, // taken from officiel template
           height: 40%, // taken from official template
-          //inset: 0.7em,
+          inset: 5%,
           breakable: false,
           {
-            v(1em)
-            set text(size: 1.1em, fill: self.colors.ltublue, font: ("Helvetica Neue", "Arial", "Liberation Sans")) 
-              move(dx:0.4em, align(start,text(info.title + layout(size => [Height: #size.height.mm()mm Width: #size.width.mm()mm])  )))
+            set text(size: 28pt, fill: self.colors.ltublue, font: ("Helvetica Neue", "Arial", "Liberation Sans")) 
+            set align(left + horizon)
+            info.title
             if info.subtitle != none {
-              v(0.1em)
               text(info.subtitle)
             }
-            move(dx: -7.2em, dy: -0.5em, rect(fill: self.colors.ltuorange, width: 2em, height: 4pt))
+            // Orange bar
+            align(left,rect(fill: self.colors.ltuorange, width: 15%, height: 2%))
             // content here
-            set text(size: .8em)
+            set text(size: 20pt)
             grid(
               columns: (1fr,) * calc.min(info.authors.len(), 3),
               column-gutter: 1em,
               row-gutter: 1em,
-              ..info.authors.map(author => move(dx: -7.2em, align(left, text( author,  ))))
+              ..info.authors.map(author => align(left, text( author,  )))
             )
-            v(1em)
             if info.institution != none {
               parbreak()
-              text(size: .9em, info.institution)
+              text(size: 20pt, info.institution)
             }
             if info.date != none {
               parbreak()
-              text(size: .8em, utils.display-info-date(self))
+              text(size: 20pt, utils.display-info-date(self))
             }
           }  
         )

@@ -4,9 +4,10 @@
 #show: ltutheme.with(
   config-info(
     //subtitle: "D7020E - Robust and Energy Efficient Real-Time Systems",
-    title: "Robust and Energy Efficient
-Real-Time Systems",
-    authors: "Pawel Dzialo, Prof. Per Lindgren",
+    title: "Robust and Energy Efficient",
+    authors: ("Pawel Dzialo", "Prof. Per Lindgren"),
+   // date: "1.1.1970",
+//    institution: "Luleå University of Technology",
   )
   )
 = Aims/Content/Outcome
