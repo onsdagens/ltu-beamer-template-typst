@@ -157,23 +157,20 @@
     }
   }
   let body = {
-    //layout(background => (image("img/title.jpg", height: 10%, width: 10%)))
+     v(24%) // taken from official template
     std.align(
-      center,
+      center + top,
       {
-        v(13.5%) // no real rationale behind this
         block(
-          // we assume presentation 16:9 which is
-          // 297.0 by 167.0625 milimeters https://github.com/typst/typst/blob/17a7890b2dc47da390d194d3593ed9a8b5668169/crates/typst-library/src/layout/page.rs#L937
           fill: white,
-          width: 297mm * 60%,
-          height: 167.0625mm * 40%,
+          width: 60%, // taken from officiel template
+          height: 40%, // taken from official template
           //inset: 0.7em,
           breakable: false,
           {
             v(1em)
             set text(size: 1.1em, fill: self.colors.ltublue, font: ("Helvetica Neue", "Arial", "Liberation Sans")) 
-              move(dx:0.4em, align(start,text(info.title)))
+              move(dx:0.4em, align(start,text(info.title + layout(size => [Height: #size.height.mm()mm Width: #size.width.mm()mm])  )))
             if info.subtitle != none {
               v(0.1em)
               text(info.subtitle)
@@ -196,7 +193,7 @@
               parbreak()
               text(size: .8em, utils.display-info-date(self))
             }
-          },
+          }  
         )
       },
     )
@@ -208,7 +205,7 @@
   self = utils.merge-dicts(
     self,
     config-common(freeze-slide-counter: true),
-    config-page(margin: 2.95em, ..my_args),
+    config-page(margin: (left: 0mm, right: 0mm, top: 0mm, bottom: 0mm), ..my_args),
   )
   touying-slide(self: self, body)
 })

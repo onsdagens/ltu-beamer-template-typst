@@ -8,8 +8,7 @@
 Real-Time Systems",
     authors: "Pawel Dzialo, Prof. Per Lindgren",
   )
-)
-
+  )
 = Aims/Content/Outcome
   - What we cover today:
     - Course Aims
