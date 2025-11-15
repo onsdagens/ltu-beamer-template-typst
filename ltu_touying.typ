@@ -1,4 +1,5 @@
 #import "@preview/touying:0.6.1": *
+#import "autosize.typ": autosize
 
 /// Default slide function for the presentation.
 ///
@@ -161,39 +162,40 @@
     std.align(
       center + top,
       {
-        block(
+        [#block(
           fill: white,
           width: 60%, // taken from officiel template
           height: 40%, // taken from official template
-          inset: 5%,
-          breakable: false,
-          {
-            set text(size: 28pt, fill: self.colors.ltublue, font: ("Helvetica Neue", "Arial", "Liberation Sans")) 
-            set align(left + horizon)
-            info.title
-            if info.subtitle != none {
-              text(info.subtitle)
-            }
+          inset: 1cm,  // padding towards the box
+          breakable: false)[
+          #{
+            set align(left + top)
+            // Text size 10 is an ok choice, that means autosize can range from 1pt to 50pt in 1pt steps
+            set text(size: 10pt, fill: self.colors.ltublue, font: ("Helvetica Neue", "Arial", "Liberation Sans")) 
+            // two thirds title + subtitle, make as large as possible, subtitle 75% the size of the title
+            block(height: 2fr,autosize(info.title + if info.subtitle != none {align(bottom,text(size: 0.75em, parbreak() + info.subtitle))}))
             // Orange bar
-            align(left,rect(fill: self.colors.ltuorange, width: 15%, height: 2%))
-            // content here
-            set text(size: 20pt)
+            rect(fill: self.colors.ltuorange, width: 15%, height: 2%)
+            // one third authors and date 
+            align(bottom, block(height: 1fr)[   
+              #{
             grid(
               columns: (1fr,) * calc.min(info.authors.len(), 3),
               column-gutter: 1em,
               row-gutter: 1em,
               ..info.authors.map(author => align(left, text( author,  )))
             )
-            if info.institution != none {
-              parbreak()
-              text(size: 20pt, info.institution)
-            }
             if info.date != none {
-              parbreak()
-              text(size: 20pt, utils.display-info-date(self))
+              utils.display-info-date(self)
             }
-          }  
-        )
+            if info.institution != none {
+               "   -   " + info.institution
+            }
+
+              }
+            ])
+          }]  
+        ]
       },
     )
   }
