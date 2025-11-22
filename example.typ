@@ -1,5 +1,5 @@
 #import "@preview/touying:0.6.1": *
-#import "ltu_touying.typ": ltu-theme
+#import "ltu_touying.typ": ltu-theme, ltu-slide
 
 #show: ltu-theme.with(
   config-info(
@@ -31,7 +31,7 @@ This is the example slide for using:
   Here is a code snippet with highlighting:\ ```Rust let b = if a != 0 {100/a} else {100}```
 
 = Double column slide
-#slide[- Demonstrate the ability to perform *model-based* design of *small footprint* (low-powered, low-memory) distributed embedded real-time systems
+#ltu-slide[- Demonstrate the ability to perform *model-based* design of *small footprint* (low-powered, low-memory) distributed embedded real-time systems
     - Modelling and analysis of real-time applications under the RTIC framework
 ][ // These two brackets need to be on the same line!
     - Power-profiling down to the micro-second/ampere
