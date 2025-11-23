@@ -12,7 +12,7 @@
         align(horizon + center, image(
           "img/LTU_eng_vit.png",
           fit: "contain",
-          width: 30%
+          width: 30%,
         ))
       },
     ),
