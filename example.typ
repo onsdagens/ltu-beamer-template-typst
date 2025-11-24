@@ -34,8 +34,8 @@ Here is a code snippet with highlighting:\ ```Rust let b = if a != 0 {100/a} els
 #ltu-slide[
   - Demonstrate the ability to perform *model-based* design of *small footprint* (low-powered, low-memory) distributed embedded real-time systems
   - Modelling and analysis of real-time applications under the RTIC framework
+  // These following two brackets need to be on the same line:
 ][
-  // These two brackets need to be on the same line!
   - Power-profiling down to the micro-second/ampere
   - Validation of embedded software by debugging and tracing
 ]
