@@ -16,9 +16,17 @@ jobs:
 
       - name: Install typst
         run: wget -O - https://github.com/typst/typst/releases/download/v0.14.0/typst-x86_64-unknown-linux-musl.tar.xz | tar xvJ
+    
+      - name: Download dubious .exe from the internet (Arial font)
+        run: wget http://downloads.sourceforge.net/corefonts/arial32.exe
+
+      - name: Extract dubious .exe from the internet
+        run: 7z x arial32.exe
 
       - name: Compile
         run: typst-x86_64-unknown-linux-musl/typst compile example.typ
+        env:
+          TYPST_FONT_PATHS: ./
       
       - name: Upload Release Binary
         uses: softprops/action-gh-release@v2
