@@ -35,17 +35,18 @@
               // Text size 10 is an ok choice, that means autosize can range from 1pt to 50pt in 1pt steps
               set text(size: 10pt)
               // two thirds title + subtitle, make as large as possible, subtitle 75% the size of the title
-              block(height: 2fr, autosize(
-                text(fill: main-blue, info.title)
+              block(height: 2fr,
+                text(size: 36pt, fill: main-blue, info.title)
                   + if info.subtitle != none {
                     align(bottom, text(
-                      size: 0.75em,
-                      parbreak() + text(fill: main-figure, info.subtitle),
+                      size: 24pt,
+                      fill: main-figure,
+                      parbreak() + info.subtitle,
                     ))
                   },
-              ))
+              )
               // Orange bar
-              rect(fill: main-orange, width: 15%, height: 2%)
+              rect(fill: main-orange, width: 2.01cm, height: 0.15cm)
               // one third authors and date
               align(bottom, block(height: 1fr)[
                 #{

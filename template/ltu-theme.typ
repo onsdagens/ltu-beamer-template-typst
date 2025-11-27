@@ -17,7 +17,9 @@
   set raw(theme: "code.theme")
   touying-slides(
     config-page(
-      fill: main-background-blue
+      fill: main-background-blue,
+      width: 13.333in,
+      height: 7.5in
     ),
     config-common(
       zero-margin-header: false,
