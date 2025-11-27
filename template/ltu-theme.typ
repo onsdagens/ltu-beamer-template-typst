@@ -2,7 +2,7 @@
 #import "ltu-slide.typ": ltu-slide
 #import "ltu-title-slide.typ": ltu-title-slide
 #import "ltu-final-slide.typ": ltu-final-slide
-#import "template/ltu-colors.typ": *
+#import "ltu-colors.typ": *
 
 #let ltu-theme(
   ..args,
