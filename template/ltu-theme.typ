@@ -8,7 +8,7 @@
   body,
 ) = {
   set text(
-    font: ("Helvetica Neue", "Arial", "Liberation Sans"),
+    font: ("Arial"),
     fill: white,
     size: 20pt,
   )
