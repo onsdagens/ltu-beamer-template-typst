@@ -1,5 +1,6 @@
 #import "@preview/touying:0.6.1": *
 #import "autosize.typ": autosize
+#import "ltu-colors.typ": *
 
 #let ltu-title-slide(
   ..args,
@@ -32,14 +33,14 @@
             #{
               set align(left + top)
               // Text size 10 is an ok choice, that means autosize can range from 1pt to 50pt in 1pt steps
-              set text(size: 10pt, fill: self.colors.ltu-blue)
+              set text(size: 10pt)
               // two thirds title + subtitle, make as large as possible, subtitle 75% the size of the title
               block(height: 2fr, autosize(
-                info.title
+                text(fill: main-blue, info.title)
                   + if info.subtitle != none {
                     align(bottom, text(
                       size: 0.75em,
-                      parbreak() + info.subtitle,
+                      parbreak() + text(fill: main-figure, info.subtitle),
                     ))
                   },
               ))
