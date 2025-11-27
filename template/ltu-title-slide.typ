@@ -45,7 +45,7 @@
                   },
               ))
               // Orange bar
-              rect(fill: self.colors.ltu-orange, width: 15%, height: 2%)
+              rect(fill: main-orange, width: 15%, height: 2%)
               // one third authors and date
               align(bottom, block(height: 1fr)[
                 #{

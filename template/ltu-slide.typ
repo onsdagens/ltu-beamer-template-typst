@@ -20,7 +20,7 @@
   let tm = (cy + bh) / (1 - ha) // top margin
   let xm = btd + bw + cx // x-margin, we are only interested in left, x is only for symmetry
   let sl = btd + bw // shift  left
-  let bar = rect(width: bw, height: bh, fill: self.colors.ltu-orange)
+  let bar = rect(width: bw, height: bh, fill: main-orange)
   let tab = align(
     horizon,
     stack(
