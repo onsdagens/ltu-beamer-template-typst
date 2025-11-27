@@ -53,7 +53,7 @@
         text(fill: main-blue, size: 10pt, weight: "bold", stack(
           dir: ltr,
           h(btd),
-          text(tracking: 1.25pt, upper(ltu)),
+          text(tracking: 3pt, upper(ltu)),
           h(1fr),
           pagenr,
           h(btd),
