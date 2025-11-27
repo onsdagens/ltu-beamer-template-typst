@@ -15,7 +15,7 @@ jobs:
       run: wget -O - https://github.com/typst/typst/releases/download/v0.14.0/typst-x86_64-unknown-linux-musl.tar.xz | tar xvJ
 
     - name: Download dubious .exe from the internet (Arial font)
-      run: yes | apt install ttf-mscorefonts-installer
+      run: sudo "yes | apt install ttf-mscorefonts-installer"
 
     - name: Compile
       run: typst-x86_64-unknown-linux-musl/typst compile example.typ
