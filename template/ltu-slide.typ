@@ -10,7 +10,7 @@
   let c = 10mm // corner size
   let ts = 0.3528mm * 28 // text size, 28pt
   let bw = 1.5mm // bar width
-  let bh = 20mm // bar height
+  let bh = 20.1mm // bar height
   let ha = 0.2 // header ascent
   let btd = ts / 2 // bar-text-distance
 

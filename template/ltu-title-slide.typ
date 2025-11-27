@@ -45,7 +45,7 @@
                   },
               ))
               // Orange bar
-              rect(fill: main-orange, width: 15%, height: 2%)
+              rect(fill: main-orange, width: 2.01cm, height: 0.15cm)
               // one third authors and date
               align(bottom, block(height: 1fr)[
                 #{
