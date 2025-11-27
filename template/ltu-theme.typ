@@ -2,13 +2,14 @@
 #import "ltu-slide.typ": ltu-slide
 #import "ltu-title-slide.typ": ltu-title-slide
 #import "ltu-final-slide.typ": ltu-final-slide
+#import "ltu-colors.typ": *
 
 #let ltu-theme(
   ..args,
   body,
 ) = {
   set text(
-    font: ("Arial"),
+    font: "Arial",
     fill: white,
     size: 20pt,
   )
