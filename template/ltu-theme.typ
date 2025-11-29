@@ -14,6 +14,8 @@
     fill: main-white,
     size: 24pt,
   )
+  // Paragraph spacing: 24 * 0.3528 = 8.4672mm text size. 8.4672 / 6.35 (par spacing from template) = 1.33341...
+  set par(spacing: 1.33341em)
 
   // bulletpoints
   set list(marker: text(fill: main-figure, sym.square.filled))
