@@ -20,8 +20,15 @@ This is the example slide for using:
 _italic_ text
 + Numbered lists
 + Number 2
-Math mode: $E=m c^2$ \
+Math mode: $E=m c^2$
 References @dijkstra
+
+= This slide features bullets
+- on various indentation levels
+  - such as two level nesting
+    - or three levels of nesting
+      - what about four?
+        - five? thats enough for sure
 
 = Course Aims and Content
 Using `#pause` splits the content over multiple slides
