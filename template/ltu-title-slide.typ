@@ -18,55 +18,26 @@
       (authors,)
     }
   }
+  // Any oddly specific mm values should be blamed on the official PPT template
   let body = {
-    v(24%) // taken from official template
+    v(41.64mm)
     std.align(
-      center + top,
-      {
-        [#block(
-            fill: white,
-            width: 60%, // taken from officiel template
-            height: 40%, // taken from official template
-            inset: 1cm, // padding towards the box
-            breakable: false,
-          )[
-            #{
-              set align(left + top)
-              // Text size 10 is an ok choice, that means autosize can range from 1pt to 50pt in 1pt steps
-              set text(size: 10pt)
-              // two thirds title + subtitle, make as large as possible, subtitle 75% the size of the title
-              block(height: 2fr,
-                text(size: 36pt, fill: main-blue, info.title)
-                  + if info.subtitle != none {
-                    align(bottom, text(
-                      size: 24pt,
-                      fill: main-figure,
-                      parbreak() + info.subtitle,
-                    ))
-                  },
-              )
-              // Orange bar
-              rect(fill: main-orange, width: 2.01cm, height: 0.15cm)
-              // one third authors and date
-              align(bottom, block(height: 1fr)[
-                #{
-                  grid(
-                    columns: (1fr,) * calc.min(info.authors.len(), 3),
-                    column-gutter: 1em,
-                    row-gutter: 1em,
-                    ..info.authors.map(author => align(left, text(author)))
-                  )
-                  if info.date != none {
-                    utils.display-info-date(self)
-                  }
-                  if info.institution != none {
-                    "   -   " + info.institution
-                  }
-                }
-              ])
-            }]
-        ]
-      },
+      left + top,
+      stack(dir: ltr, h(59.96mm), block(
+        fill: white,
+        width: 211.05mm,
+        height: 83.52mm,
+        breakable: false,
+        stack(dir: ltr, h(12.67mm), stack(
+          dir: ttb,
+          v(8.13mm),
+          box(width: 189.88mm, height: 32mm, inset: (top: 1.27mm, bottom: 1.27mm, right: 2.54mm), align(bottom, text(size: 36pt, bottom-edge: "bounds", fill: main-blue, info.title))),
+          v(2.7mm),
+          rect(width: 19.99mm, height: 1.39mm, fill: main-orange),
+          v(4.42mm),
+          box(width: 189.88mm, height: 25.14mm, inset: (top: 1.27mm, bottom: 1.27mm, right: 2.54mm), align(horizon, text(size: 24pt, fill: main-figure, info.subtitle))),
+        )),
+      )),
     )
   }
   self = utils.merge-dicts(
@@ -75,12 +46,12 @@
     config-page(
       margin: 0mm,
       background: {
-        align(right, image(
-          "img/first_slide_bg.jpg",
-          fit: "stretch",
-          width: 50%,
-          height: 100%,
-        ))
+        align(
+          right,
+          image(
+            "img/first_slide_bg.jpg",
+          ),
+        )
       },
     ),
   )

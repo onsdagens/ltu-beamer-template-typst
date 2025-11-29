@@ -5,18 +5,17 @@
   if title != auto {
     self.store.title = title
   }
-
+  // Any oddly specific mm values should be blamed on the official PPT template
   // these values are meant for playing around:
-  let c = 10mm // corner size
   let ts = 0.3528mm * 28 // text size, 28pt
-  let bw = 1.5mm // bar width
-  let bh = 20.1mm // bar height
+  let bw = 1.29mm // bar width
+  let bh = 18.59mm // bar height
   let ha = 0.2 // header ascent
   let btd = ts / 2 // bar-text-distance
 
   // these values are not meant for playing around:
-  let cx = c // corner x
-  let cy = c // corner y
+  let cx = 9.1mm // corner x
+  let cy = 10.3mm // corner y
   let tm = (cy + bh) / (1 - ha) // top margin
   let xm = btd + bw + cx // x-margin, we are only interested in left, x is only for symmetry
   let sl = btd + bw // shift  left
