@@ -18,16 +18,22 @@
   set par(spacing: 1.33341em)
 
   // bulletpoints
-  set list(marker: text(fill: main-figure, sym.square.filled))
+  set list(body-indent: 0.13em, marker: move(dy: -0.15em, text(1.3em, fill: main-white, sym.square.filled.tiny))) // There is normal, .tiny (25AA), .small (25FE), .medium (25FC), .big (2B1B), my measurements were based on tiny i believe
   // Manual counter for decreasing bullet point size, taken from forum
   let list-counter = counter("list")
   show list: it => {
     list-counter.step()
 
     context {
+      set list(body-indent: 0.22em) if list-counter.get().first() == 1
+      set list(body-indent: 0.32em) if list-counter.get().first() == 2
+      set list(body-indent: 0.38em) if list-counter.get().first() == 3
+      set list(body-indent: 0.40em) if list-counter.get().first() >= 4
+
       set text(20pt) if list-counter.get().first() == 2
       set text(18pt) if list-counter.get().first() == 3
       set text(16pt) if list-counter.get().first() >= 4
+
       it
     }
     list-counter.update(i => i - 1)
