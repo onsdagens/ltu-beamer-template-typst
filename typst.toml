@@ -1,0 +1,12 @@
+[package]
+name = "kraftpunkt-ltu"
+version = "0.1.0"
+entrypoint = "src/ltu-theme.typ"
+authors = ["@onsdagens, @tim-ufer, @mxmxchere"]
+license = "MIT AND Apache-2.0"
+description = "Official presentations at Luleå University of Technology."
+
+[template]
+path = "example"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
