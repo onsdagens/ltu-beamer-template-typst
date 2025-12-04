@@ -21,6 +21,6 @@ jobs:
       run: 7z x arial32.exe
 
     - name: Compile
-      run: typst-x86_64-unknown-linux-musl/typst compile example.typ
+      run: typst-x86_64-unknown-linux-musl/typst compile example/main.typ
       env:
         TYPST_FONT_PATHS: ./
