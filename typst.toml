@@ -9,3 +9,4 @@ description = "Official presentations at Luleå University of Technology."
 [template]
 path = "example"
 entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
