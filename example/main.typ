@@ -1,5 +1,5 @@
 #import "@preview/touying:0.6.1": *
-#import "@local/kraftpunkt-ltu:0.1.0": ltu-theme, ltu-colors, ltu-empty-slide
+#import "@local/kraftpunkt-ltu:0.3.0": ltu-theme, ltu-colors, ltu-empty-slide
 
 #show: ltu-theme.with(
   config-info(

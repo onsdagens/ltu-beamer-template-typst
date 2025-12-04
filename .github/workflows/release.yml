@@ -27,7 +27,7 @@ jobs:
         run: mkdir -p ~/.local/share/typst/packages/local/kraftpunkt-ltu/
 
       - name: Link to local package registry
-        run: ln -s $(pwd) ~/.local/share/typst/packages/local/kraftpunkt-ltu/0.1.0
+        run: ln -s $(pwd) ~/.local/share/typst/packages/local/kraftpunkt-ltu/0.3.0
 
       - name: Compile
         run: typst-x86_64-unknown-linux-musl/typst compile example/main.typ
