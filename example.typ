@@ -1,5 +1,6 @@
 #import "@preview/touying:0.6.1": *
 #import "template/ltu-theme.typ": ltu-slide, ltu-theme
+#import "template/ltu-empty-slide.typ": ltu-empty-slide
 
 #show: ltu-theme.with(
   config-info(
@@ -29,6 +30,8 @@ References @dijkstra
     - or three levels of nesting
       - what about four?
         - five? thats enough for sure
+        
+#ltu-empty-slide()
 
 = Course Aims and Content
 Using `#pause` splits the content over multiple slides
