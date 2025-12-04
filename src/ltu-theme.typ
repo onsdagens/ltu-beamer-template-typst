@@ -3,6 +3,9 @@
 #import "ltu-title-slide.typ": ltu-title-slide
 #import "ltu-final-slide.typ": ltu-final-slide
 #import "ltu-colors.typ": *
+#import "ltu-empty-slide.typ": ltu-empty-slide
+
+#let ltu-empty-slide = ltu-empty-slide
 
 #let ltu-theme(
   ..args,

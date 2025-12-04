@@ -49,7 +49,6 @@ Here is a code snippet with highlighting:\ ```Rust let b = if a != 0 {100/a} els
 = Double column slide
   - Power-profiling down to the micro-second/ampere
   - Validation of embedded software by debugging and tracing
-]
 
 = Manual double column slide
 However, it is not yet known how or why this works. In case you want to use something that does not involve black magic you can do it manually for example like this:
