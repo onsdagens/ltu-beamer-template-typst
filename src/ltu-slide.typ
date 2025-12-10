@@ -50,12 +50,13 @@
       align(
         horizon,
         // I reused btd for the x padding, need to see whether thats nice or not
-        text(fill: main-blue, size: 9pt, weight: "bold", stack(
+        // The font is bolder than bold, using extrabold here takes it too far though
+        text(fill: main-background-blue, size: 9pt, weight: "bold", stack(
           dir: ltr,
-          h(2.5mm),
-          text(tracking: 3pt, upper(ltu)),
+          h(2.45mm),
+          text(tracking: 3pt, baseline: 0.3mm, upper(ltu)),
           h(1fr),
-          box(width: 15.29mm, align(center + horizon, pagenr)),
+          box(width: 15.29mm, align(center + horizon, text(weight: "medium", pagenr))),
         )),
       ), // align
     ) // box
@@ -65,9 +66,9 @@
     config-page(
       header: header,
       footer: footer,
-      margin: (top: tm, x: xm, bottom: 9.69mm),
+      margin: (top: tm, x: xm, bottom: 8.3mm),
       header-ascent: ha * 100%,
-      footer-descent: 0mm, // rationale: the footer "pads" itself by its horizontal alignment
+      footer-descent: -1mm, // rationale: the footer "pads" itself by its horizontal alignment
     ),
   )
   touying-slide(self: self, ..args)
