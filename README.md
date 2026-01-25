@@ -16,8 +16,8 @@ A rendered .pdf of `example.typ` using the latest commit deemed release-worthy i
 ### example/*
 MIT-0: This means that you can start building presentations from example/main.typ without any licensing requirements.
 
-### Images and Logo
-are property of LTU under unclear license terms, use at your own risk.
+### Logo in src/img
+The copyright to any content of the src/img directory is owned by LTU.
 
 ### All other source code 
 (including code snippets) is licensed under either of
