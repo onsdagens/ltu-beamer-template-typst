@@ -1,12 +1,12 @@
 [package]
-name = "kraftpunkt-ltu"
+name = "scholarly-ltupresentation"
 version = "0.3.2"
 entrypoint = "src/ltu-theme.typ"
 authors = ["<@onsdagens>", "<@tim-ufer>", "<@mxmxchere>"]
 license = "MIT AND Apache-2.0"
-description = "Official presentations at Luleå University of Technology."
+description = "Presentations at Luleå University of Technology."
 categories = ["presentation"]
-repository = "https://github.com/onsdagens/ltu-beamer-template-typst"
+repository = "https://github.com/onsdagens/scholarly-ltupresentation"
 
 [template]
 path = "example"
