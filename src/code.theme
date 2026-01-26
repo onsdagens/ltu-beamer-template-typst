@@ -101,18 +101,31 @@
 
     <dict>
       <key>name</key>
-      <string>Compiler error</string>
+      <string>compiler error</string>
       <key>scope</key>
       <string>compmsg.error</string>
       <key>settings</key>
       <dict>
-        <key>fontStyle</key>
+        <key>fontstyle</key>
         <string>bold</string>
         <key>foreground</key>
         <string>#c72a49</string>
       </dict>
     </dict>
     
+    <dict>
+      <key>name</key>
+      <string>compiler suggestion</string>
+      <key>scope</key>
+      <string>compmsg.suggestion</string>
+      <key>settings</key>
+      <dict>
+        <key>fontstyle</key>
+        <string>bold</string>
+        <key>foreground</key>
+        <string>#6ed4d5</string>
+      </dict>
+    </dict> 
     <dict>
       <key>name</key>
       <string>Compiler symbols</string>
@@ -125,8 +138,7 @@
         <key>foreground</key>
         <string>#35b3ff</string>
       </dict>
-    </dict>
-    
+    </dict> 
     <dict>
       <key>name</key>
       <string>Compiler warning</string>
@@ -140,7 +152,6 @@
         <string>#ff8247</string>
       </dict>
     </dict>
-
     <dict>
       <key>name</key>
       <string>Variable</string>
