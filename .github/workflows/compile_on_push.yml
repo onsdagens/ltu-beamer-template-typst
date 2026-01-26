@@ -21,15 +21,15 @@ jobs:
       run: 7z x arial32.exe
 
     - name: Create local package registry
-      run: mkdir -p ~/.local/share/typst/packages/local/scholarly-ltu/
+      run: mkdir -p ~/.local/share/typst/packages/local/scholarly-ltupresentation/
 
     - name: Link to local package registry
-      run: ln -s $(pwd) ~/.local/share/typst/packages/local/scholarly-ltu/0.3.2
+      run: ln -s $(pwd) ~/.local/share/typst/packages/local/scholarly-ltupresentation/0.3.2
 
     - name: Init template
-      run: typst-x86_64-unknown-linux-musl/typst init @local/scholarly-ltu:0.3.2
+      run: typst-x86_64-unknown-linux-musl/typst init @local/scholarly-ltupresentation:0.3.2
 
     - name: Compile
-      run: typst-x86_64-unknown-linux-musl/typst compile scholarly-ltu/main.typ
+      run: typst-x86_64-unknown-linux-musl/typst compile scholarly-ltupresentation/main.typ
       env:
         TYPST_FONT_PATHS: ./
